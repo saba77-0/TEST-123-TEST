@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Your Email - STEP BOOKING</title>
+  <link rel="icon" type="image/jpeg" href="https://static.doit.gov.ge/img_20240627_155135_eec7d9.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="auth-wrapper">
+    <div class="auth-left">
+      <div class="auth-brand-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+      </div>
+
+      <h1 class="brand-title">Almost There!</h1>
+      <p class="brand-subtitle">Just one more step to unlock exclusive hotel deals and start booking.</p>
+
+      <div class="perks-list">
+        <div class="perk-item">
+          <div class="perk-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="perk-content">
+            <h4>Secure Account</h4>
+            <p>Your account security is our priority</p>
+          </div>
+        </div>
+        <div class="perk-item">
+          <div class="perk-icon"><i class="fa-solid fa-check"></i></div>
+          <div class="perk-content">
+            <h4>Quick Process</h4>
+            <p>Verification takes less than a minute</p>
+          </div>
+        </div>
+        <div class="perk-item">
+          <div class="perk-icon"><i class="fa-solid fa-users"></i></div>
+          <div class="perk-content">
+            <h4>Join the Community</h4>
+            <p>50,000+ verified travelers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-right">
+      <div id="regSuccessToast" class="top-toast-alert">
+        <div class="toast-content">
+          <i class="fa-regular fa-circle-check toast-icon"></i>
+          <span>Registration successful! Please check your email to verify your account.</span>
+        </div>
+        <button class="toast-close" onclick="this.parentElement.style.display='none'"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="auth-form-card">
+        <div class="form-header-icon">
+          <i class="fa-regular fa-envelope"></i>
+        </div>
+
+        <h2 class="form-title">Verify Your Email</h2>
+        <p class="form-subtitle">We've sent a 6-digit code to your email address</p>
+
+        <div id="verifyError" class="auth-alert error hidden"></div>
+        <div id="verifySuccess" class="auth-alert success hidden"></div>
+
+        <form id="verifyForm" class="auth-form">
+          <div class="input-group">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="text" id="verifyCodeInput" placeholder="Enter 6-digit code" required>
+          </div>
+
+          <button type="submit" id="verifySubmitBtn" class="btn btn-auth-submit">
+            <i class="fa-solid fa-check"></i> Verify Email
+          </button>
+        </form>
+
+        <div class="resend-block">
+          <p>Didn't receive the code?</p>
+          <button id="resendCodeBtn" class="btn-resend-link">Resend Code</button>
+        </div>
+
+        <p class="form-bottom-link">
+          <a href="login.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to Login</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+    
+  <div class="ai-chat-launcher" id="aiLauncher">
+    <i class="fa-solid fa-robot"></i>
+  </div>
+
+  <div class="ai-chat-window hidden" id="aiChatWindow">
+    <div class="ai-chat-header">
+      <div class="ai-title">
+        <i class="fa-solid fa-sparkles"></i>
+        <span>Step Booking AI Assistant</span>
+      </div>
+      <button type="button" id="closeAiChat">&times;</button>
+    </div>
+
+    <div class="ai-chat-messages" id="aiChatMessages">
+      <div class="ai-msg bot">
+        გამარჯობა! რით შემიძლია დაგეხმაროთ სასტუმროს ან ოთახის შერჩევაში?
+      </div>
+    </div>
+
+    <form class="ai-chat-input-row" id="aiChatForm">
+      <input type="text" id="aiInputText" placeholder="იკითხეთ რამე სასტუმროებზე..." autocomplete="off">
+      <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+
+  <script src="ai-assistant.js"></script>
+
+  <script src="auth.js"></script>
+</body>
+</html>

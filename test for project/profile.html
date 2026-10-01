@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile - STEP BOOKING</title>
+  <link rel="icon" type="image/jpeg" href="https://static.doit.gov.ge/img_20240627_155135_eec7d9.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        <span>STEP BOOKING</span>
+      </a>
+      <nav class="nav-links" id="navLinks"></nav>
+      <div id="navAuth">
+        <a href="profile.html" class="user-avatar-btn" id="navAvatarTop">SS</a>
+      </div>
+      <button type="button" class="burger-btn" id="burgerBtn" aria-label="Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main class="profile-layout">
+    <aside class="profile-sidebar">
+      <div class="sidebar-user-card">
+        <div class="user-hero-bg">
+          <div class="profile-avatar-circle" id="sidebarAvatar">
+            <img id="sidebarAvatarImg" src="" alt="Avatar" class="sidebar-avatar-img hidden">
+            <span id="sidebarAvatarText">SS</span>
+          </div>
+        </div>
+        <div class="user-meta">
+          <h2 id="sidebarName">User</h2>
+          <p id="sidebarEmail"></p>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <button class="nav-tab active" data-tab="tab-profile">
+          <i class="fa-regular fa-user"></i> My Profile
+        </button>
+        <button class="nav-tab" data-tab="tab-reservations">
+          <i class="fa-solid fa-bag-shopping"></i> Reservations
+        </button>
+        <button class="nav-tab" data-tab="tab-settings">
+          <i class="fa-solid fa-gear"></i> Settings
+        </button>
+        <button class="nav-tab logout-tab" id="logoutBtn">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+        </button>
+      </nav>
+    </aside>
+
+    <section class="profile-content">
+      <div class="tab-pane active" id="tab-profile">
+        <div class="pane-header" style="display: flex; justify-content: space-between; align-items: flex-start;">
+          <div>
+            <h1>My Profile</h1>
+            <p>Manage your personal information and preferences</p>
+          </div>
+          <span id="unsavedBadge" class="badge-unsaved hidden">● Unsaved changes</span>
+        </div>
+
+        <form id="profileForm">
+          <div class="card-box">
+            <h3 class="card-header-title"><i class="fa-regular fa-image"></i> Profile Picture</h3>
+            <div class="avatar-upload-row">
+              <div class="avatar-box" id="avatarPreviewBox">
+                <img id="avatarImagePreview" src="" alt="Avatar" class="avatar-preview-img hidden">
+                <span id="avatarInitialsText">SS</span>
+              </div>
+              <div class="avatar-input-group">
+                <label>Upload your photo</label>
+                <span>Enter a URL to your profile picture</span>
+                <div class="input-icon-wrap">
+                  <i class="fa-solid fa-link"></i>
+                  <input type="url" id="picUrlInput" placeholder="https://example.com/avatar.jpg">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-box">
+            <h3 class="card-header-title"><i class="fa-regular fa-user"></i> Personal Information</h3>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label><span class="req">*</span> First Name</label>
+                <div class="input-icon-wrap">
+                  <i class="fa-regular fa-user"></i>
+                  <input type="text" id="profFirstName" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><span class="req">*</span> Last Name</label>
+                <div class="input-icon-wrap">
+                  <i class="fa-regular fa-user"></i>
+                  <input type="text" id="profLastName" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Email Address</label>
+              <div class="input-icon-wrap disabled-wrap">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" id="profEmail" readonly>
+                <i class="fa-solid fa-lock end-icon"></i>
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label>Date of Birth</label>
+                <div class="input-icon-wrap">
+                  <i class="fa-regular fa-calendar"></i>
+                  <input type="date" id="profDob">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <div class="input-icon-wrap">
+                  <i class="fa-solid fa-phone"></i>
+                  <input type="tel" id="profPhone" placeholder="+995 555 123 456">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-box">
+            <h3 class="card-header-title"><i class="fa-solid fa-location-dot"></i> Address</h3>
+            <div class="form-group">
+              <label>Street Address</label>
+              <div class="input-icon-wrap">
+                <i class="fa-solid fa-house"></i>
+                <input type="text" id="profAddress" placeholder="Enter your street address">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-discard" id="discardProfileBtn"><i class="fa-solid fa-xmark"></i> Discard</button>
+            <button type="submit" class="btn-save"><i class="fa-solid fa-check"></i> Save Changes</button>
+          </div>
+          <div id="profileMsg" class="form-message hidden"></div>
+        </form>
+      </div>
+
+     <div class="tab-pane" id="tab-reservations">
+        <div class="pane-header">
+          <h1>My Bookings</h1>
+          <p>View and manage your hotel reservations</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fa-solid fa-bag-shopping"></i></div>
+            <div class="stat-info"><span class="stat-val" id="statTotal">0</span><span class="stat-lbl">Total Bookings</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon sky"><i class="fa-regular fa-calendar"></i></div>
+            <div class="stat-info"><span class="stat-val" id="statUpcoming">0</span><span class="stat-lbl">Upcoming</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fa-solid fa-check"></i></div>
+            <div class="stat-info"><span class="stat-val" id="statCompleted">0</span><span class="stat-lbl">Completed</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon yellow"><i class="fa-solid fa-dollar-sign"></i></div>
+            <div class="stat-info"><span class="stat-val" id="statSpent">$0.00</span><span class="stat-lbl">Total Spent</span></div>
+          </div>
+        </div>
+
+        <div class="card-box">
+          <h3 class="card-header-title"><i class="fa-solid fa-filter"></i> Filter Reservations</h3>
+          <div class="filter-res-row">
+            <div class="form-group flex-1">
+              <label>Status</label>
+              <select id="resStatusFilter">
+                <option value="all">All Statuses</option>
+                <option value="confirmed">Pending</option>
+                <option value="completed">Completed</option>
+                <option value="cancelled">Cancelled</option>
+              </select>
+            </div>
+            <div class="form-group flex-2">
+              <label>Date Range</label>
+              <div class="date-range-box">
+                <input type="date" id="resStartDate">
+                <span>&rarr;</span>
+                <input type="date" id="resEndDate">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reservations-container">
+          <div class="empty-state" id="emptyReservations">
+            <div class="empty-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+            <h3>No reservations found</h3>
+            <p>You haven't made any bookings yet. Start exploring hotels to book your next stay!</p>
+          </div>
+          <div id="reservationsList" class="res-list hidden"></div>
+
+        
+          <div id="reservationDetailsView" class="hidden"></div>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="tab-settings">
+        <div class="pane-header">
+          <h1>Account Settings</h1>
+          <p>Manage your security and account preferences</p>
+        </div>
+
+        <div class="card-box">
+          <h3 class="card-header-title"><i class="fa-solid fa-lock"></i> Change Password</h3>
+          <form id="changePasswordForm">
+            <div class="form-group">
+              <label><span class="req">*</span> Current Password</label>
+              <div class="input-icon-wrap">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="curPassword" placeholder="Enter your current password" required>
+                <button type="button" class="eye-toggle"><i class="fa-regular fa-eye"></i></button>
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label><span class="req">*</span> New Password</label>
+                <div class="input-icon-wrap">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="password" id="newPassword" placeholder="Enter your new password" required>
+                  <button type="button" class="eye-toggle"><i class="fa-regular fa-eye"></i></button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label><span class="req">*</span> Confirm New Password</label>
+                <div class="input-icon-wrap">
+                  <i class="fa-solid fa-lock"></i>
+                  <input type="password" id="confirmPassword" placeholder="Confirm your new password" required>
+                  <button type="button" class="eye-toggle"><i class="fa-regular fa-eye"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions right">
+              <button type="submit" class="btn-save"><i class="fa-solid fa-check"></i> Update Password</button>
+            </div>
+            <div id="passMsg" class="form-message hidden"></div>
+          </form>
+        </div>
+
+        <div class="danger-box">
+          <div class="danger-header">
+            <i class="fa-solid fa-triangle-exclamation"></i> Danger Zone
+          </div>
+          <div class="danger-body">
+            <div class="danger-warning">
+              <div class="warning-icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+              <div class="warning-text">
+                <h4>Delete Account</h4>
+                <p>Once you delete your account, there is no going back. Please be certain.</p>
+              </div>
+            </div>
+
+            <div class="danger-action-row">
+              <div class="danger-action-text">
+                <h4>Delete your account</h4>
+                <p>This will permanently delete your account, including all your data, reservations, and preferences.</p>
+              </div>
+              <button type="button" class="btn-delete" id="deleteAccountBtn">
+                <i class="fa-regular fa-trash-can"></i> Delete Account
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    
+  <div class="ai-chat-launcher" id="aiLauncher">
+    <i class="fa-solid fa-robot"></i>
+  </div>
+
+  <div class="ai-chat-window hidden" id="aiChatWindow">
+    <div class="ai-chat-header">
+      <div class="ai-title">
+        <i class="fa-solid fa-sparkles"></i>
+        <span>Step Booking AI Assistant</span>
+      </div>
+      <button type="button" id="closeAiChat">&times;</button>
+    </div>
+
+    <div class="ai-chat-messages" id="aiChatMessages">
+      <div class="ai-msg bot">
+        გამარჯობა! რით შემიძლია დაგეხმაროთ სასტუმროს ან ოთახის შერჩევაში?
+      </div>
+    </div>
+
+    <form class="ai-chat-input-row" id="aiChatForm">
+      <input type="text" id="aiInputText" placeholder="იკითხეთ რამე სასტუმროებზე..." autocomplete="off">
+      <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+
+
+
+  <div id="deleteModal" class="custom-modal-overlay hidden">
+  <div class="custom-modal-box">
+    <button type="button" class="modal-close-btn" id="closeDeleteModalBtn">&times;</button>
+    <div class="modal-header-row">
+      <div class="modal-icon-circle">
+        <i class="fa-solid fa-circle-exclamation"></i>
+      </div>
+      <h3 class="modal-title">Delete Account</h3>
+    </div>
+    <div class="modal-body">
+      <p class="modal-warning-highlight">⚠️ This action cannot be undone!</p>
+      <p class="modal-desc">Deleting your account will permanently remove:</p>
+      <ul class="modal-list">
+        <li>Your profile information</li>
+        <li>Your reservations items</li>
+      </ul>
+      <p class="modal-question">Are you absolutely sure you want to delete your account?</p>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn-modal-cancel" id="cancelDeleteBtn">Cancel</button>
+      <button type="button" class="btn-modal-confirm" id="confirmDeleteBtn">Yes, Delete My Account</button>
+    </div>
+  </div>
+</div>
+  <script src="ai-assistant.js"></script>
+
+  <script src="profile.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Back - STEP BOOKING</title>
+  <link rel="icon" type="image/jpeg" href="https://static.doit.gov.ge/img_20240627_155135_eec7d9.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="auth-wrapper">
+    <div class="auth-left">
+      <div class="auth-brand-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+      </div>
+
+      <h1 class="brand-title">STEP BOOKING</h1>
+      <p class="brand-subtitle">Access exclusive hotel deals and manage your bookings with your account.</p>
+
+      <div class="stats-row-dark">
+        <div class="stat-dark-item">
+          <h3>50K+</h3>
+          <p>BOOKINGS</p>
+        </div>
+        <div class="stat-dark-item">
+          <h3>200+</h3>
+          <p>HOTELS</p>
+        </div>
+        <div class="stat-dark-item">
+          <h3>24/7</h3>
+          <p>GUEST SUPPORT</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-right">
+      <div class="auth-form-card">
+        <div class="form-header-icon">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        </div>
+
+        <h2 class="form-title">Welcome Back</h2>
+        <p class="form-subtitle">Sign in to manage your bookings 🏨</p>
+
+        <div id="loginError" class="auth-alert error hidden"></div>
+
+        <form id="loginForm" class="auth-form">
+          <div class="input-group">
+            <i class="fa-regular fa-envelope input-icon"></i>
+            <input type="email" id="loginEmail" placeholder="Email address" required>
+          </div>
+
+          <div class="input-group">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+          </div>
+
+          <div class="login-options-row">
+            <label class="remember-label">
+              <input type="checkbox" id="rememberMe"> Remember me
+            </label>
+            <a href="forgot-password.html" class="forgot-pwd-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" id="loginSubmitBtn" class="btn btn-auth-submit">Sign In</button>
+        </form>
+
+        <div class="auth-separator">
+          <span>or</span>
+        </div>
+
+        <p class="form-bottom-link">
+          Don't have an account? <a href="register.html">Create one now</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+    
+  <div class="ai-chat-launcher" id="aiLauncher">
+    <i class="fa-solid fa-robot"></i>
+  </div>
+
+  <div class="ai-chat-window hidden" id="aiChatWindow">
+    <div class="ai-chat-header">
+      <div class="ai-title">
+        <i class="fa-solid fa-sparkles"></i>
+        <span>Step Booking AI Assistant</span>
+      </div>
+      <button type="button" id="closeAiChat">&times;</button>
+    </div>
+
+    <div class="ai-chat-messages" id="aiChatMessages">
+      <div class="ai-msg bot">
+        გამარჯობა! რით შემიძლია დაგეხმაროთ სასტუმროს ან ოთახის შერჩევაში?
+      </div>
+    </div>
+
+    <form class="ai-chat-input-row" id="aiChatForm">
+      <input type="text" id="aiInputText" placeholder="იკითხეთ რამე სასტუმროებზე..." autocomplete="off">
+      <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+
+  <script src="ai-assistant.js"></script>
+
+  <script src="auth.js"></script>
+</body>
+</html>

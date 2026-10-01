@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Details - STEP BOOKING</title>
+  <link rel="icon" type="image/jpeg" href="https://static.doit.gov.ge/img_20240627_155135_eec7d9.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        <span>STEP BOOKING</span>
+      </a>
+      <nav class="nav-links" id="navLinks"></nav>
+      <div id="navAuth">
+        <a href="login.html" class="btn btn-primary btn-sm">Sign In</a>
+      </div>
+      <button type="button" class="burger-btn" id="burgerBtn" aria-label="Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main class="main-content" id="hotelMainContent">
+    <p style="text-align: center; margin-top: 40px;">იტვირთება სასტუმროს მონაცემები...</p>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <a href="https://ge.itstep.org" target="_blank" class="footer-link">Created by IT STEP Academy Georgia</a>
+    </div>
+  </footer>
+
+    
+  <div class="ai-chat-launcher" id="aiLauncher">
+    <i class="fa-solid fa-robot"></i>
+  </div>
+
+  <div class="ai-chat-window hidden" id="aiChatWindow">
+    <div class="ai-chat-header">
+      <div class="ai-title">
+        <i class="fa-solid fa-sparkles"></i>
+        <span>Step Booking AI Assistant</span>
+      </div>
+      <button type="button" id="closeAiChat">&times;</button>
+    </div>
+
+    <div class="ai-chat-messages" id="aiChatMessages">
+      <div class="ai-msg bot">
+        გამარჯობა! რით შემიძლია დაგეხმაროთ სასტუმროს ან ოთახის შერჩევაში?
+      </div>
+    </div>
+
+    <form class="ai-chat-input-row" id="aiChatForm">
+      <input type="text" id="aiInputText" placeholder="იკითხეთ რამე სასტუმროებზე..." autocomplete="off">
+      <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+
+  <script src="ai-assistant.js"></script>
+  <script src="hotel.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>

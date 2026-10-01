@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complete your booking - STEP BOOKING</title>
+  <link rel="icon" type="image/jpeg" href="https://static.doit.gov.ge/img_20240627_155135_eec7d9.jpg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0066ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg>
+        <span>STEP BOOKING</span>
+      </a>
+      <nav class="nav-links" id="navLinks"></nav>
+      <div id="navAuth">
+        <a href="login.html" class="btn btn-primary btn-sm">Sign In</a>
+      </div>
+      <button type="button" class="burger-btn" id="burgerBtn" aria-label="Menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main class="booking-main">
+    <div style="margin-bottom: 20px;">
+      <a href="javascript:history.back()" id="backToRoomLink" style="color: #64748b; text-decoration: none; font-size: 0.9rem; font-weight: 500;">
+        <i class="fa-solid fa-arrow-left"></i> Back to room
+      </a>
+    </div>
+
+    <h1 style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 24px;">Complete your booking</h1>
+
+    <div class="booking-layout">
+      
+   
+      <div class="booking-col">
+        
+   
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px;">
+          <h3 style="margin: 0 0 18px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-regular fa-calendar" style="color: #0066ff;"></i> Stay Dates
+          </h3>
+          <div class="booking-dates-grid">
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: #475569; margin-bottom: 6px;">
+                <span style="color: #ef4444;">*</span> Check-in Date
+              </label>
+              <input type="date" id="bookingCheckIn" style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.9rem; outline: none;">
+            </div>
+            <div>
+              <label style="display: block; font-size: 0.8rem; font-weight: 600; color: #475569; margin-bottom: 6px;">
+                <span style="color: #ef4444;">*</span> Check-out Date
+              </label>
+              <input type="date" id="bookingCheckOut" style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.9rem; outline: none;">
+            </div>
+          </div>
+          <div style="margin-top: 14px;">
+            <span id="nightsBadge" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: #eff6ff; color: #0066ff; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+              <i class="fa-solid fa-moon"></i> 1 night
+            </span>
+          </div>
+        </div>
+
+    
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px;">
+          <h3 style="margin: 0 0 18px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-user-group" style="color: #0066ff;"></i> Guest Details
+          </h3>
+
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; color: #475569; margin-bottom: 6px;">
+              <span style="color: #ef4444;">*</span> Number of Guests
+            </label>
+            <input type="number" id="bookingGuests" value="1" min="1" max="10" style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.9rem; outline: none;">
+            <span id="maxCapacityText" style="display: block; margin-top: 6px; font-size: 0.78rem; color: #64748b;">
+              <i class="fa-solid fa-circle-info"></i> Max capacity: 2 guests
+            </span>
+          </div>
+
+          <div>
+            <label style="display: block; font-size: 0.8rem; font-weight: 600; color: #475569; margin-bottom: 6px;">
+              Special Requests
+            </label>
+            <textarea id="bookingRequests" rows="3" placeholder="Any special requirements for your stay..." style="width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 10px; font-size: 0.9rem; outline: none; resize: vertical;"></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="booking-summary" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+        <div style="display: flex; gap: 14px; margin-bottom: 20px;">
+          <img id="summaryRoomImg" src="https://via.placeholder.com/90" alt="Room" style="width: 80px; height: 70px; border-radius: 10px; object-fit: cover;">
+          <div>
+            <h4 id="summaryRoomName" style="margin: 0 0 4px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a;">Room</h4>
+            <p id="summaryHotelName" style="margin: 0 0 6px 0; font-size: 0.82rem; color: #64748b;">Hotel</p>
+            <div id="summaryStars" style="color: #cbd5e1; font-size: 0.8rem;"></div>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid #f1f5f9; padding: 16px 0; display: flex; flex-direction: column; gap: 10px; font-size: 0.9rem; color: #64748b;">
+          <div style="display: flex; justify-content: space-between;">
+            <span>Price per night</span>
+            <strong id="summaryPricePerNight" style="color: #0f172a;">$0</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>Nights</span>
+            <strong id="summaryNightsCount" style="color: #0f172a;">1</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>Guests</span>
+            <strong id="summaryGuestsCount" style="color: #0f172a;">1</strong>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid #f1f5f9; padding: 18px 0; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 1.15rem; font-weight: 800; color: #0f172a;">Total</span>
+          <span id="summaryTotalPrice" style="font-size: 1.45rem; font-weight: 800; color: #0066ff;">$0</span>
+        </div>
+
+        <button type="button" id="confirmBookingBtn" style="width: 100%; padding: 14px; background: #0066ff; color: #ffffff; border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <i class="fa-solid fa-check"></i> Confirm Booking
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <a href="https://ge.itstep.org" target="_blank" class="footer-link">Created by IT STEP Academy Georgia</a>
+    </div>
+  </footer>
+
+  <script src="ai-assistant.js"></script>
+  <script src="booking.js"></script>
+  <script src="nav.js"></script>
+</body>
+</html>
